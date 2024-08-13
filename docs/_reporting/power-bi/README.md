@@ -59,7 +59,7 @@ When you need more advanced reporting or to merge with your own data, we recomme
    - The connector uses existing raw cost data APIs and cannot scale to data sizes beyond $5M<sup>1</sup>.
    - Due to the size constraints, the connector will be phased out by the Cost Management team starting in 2024.
    - The APIs do not include some key columns for savings plans, like the BenefitId/Name columns. All costs are covered but not always easily identifiable.
-2. For costs under $2-5M/month (~$65M total)<sup>2</sup> that need savings plan data, you can use raw exports with Power BI.
+2. For costs under $1M/month (~$13M total)<sup>2</sup> that need savings plan data, you can use raw exports with Power BI.
 3. For costs under $2-5M/month (~$65M total)<sup>2</sup> that need savings plan data, you can use FinOps hubs with Power BI.
 4. _**Coming soon:**_ For costs over $5M/month or for additional capabilities, you can connect Fabric to either FinOps hubs or raw exports.
    - This is possible today, but is not supported in FinOps toolkit reports yet. Support will be added in a future release.
@@ -72,7 +72,8 @@ In general, we recommend starting with the Cost Management connector when gettin
 
 | Capabilities                                        |            Connector             |             Exports              |           FinOps hubs            | Microsoft Fabric<sup>1</sup> |
 | --------------------------------------------------- | :------------------------------: | :------------------------------: | :------------------------------: | :--------------------------: |
-| Cost (based on list prices)                         |                $0                |           ~$10 per $1M           |           ~$25 per $1M           |             TBD              |
+| Estimated Azure list cost                            |                $0                |            ~$3 per $1M           |            ~$5 per $1M           |             TBD              |
+| Estimated Power BI list cost                         |                $0                |             Up to $20             |             Up to $20             |             TBD              |
 | Data storage                                        |             Power BI             |        Data Lake Storage         |        Data Lake Storage         |      Data Lake Storage       |
 | Est. max raw cost details per month<sup>2</sup>     | $2M/mo (Pro)<br>$5M/mo (Premium) | $2M/mo (Pro)<br>$5M/mo (Premium) | $2M/mo (Pro)<br>$5M/mo (Premium) |             TBD              |
 | Est. max total with incremental refresh<sup>3</sup> |    $2M (Pro)<br>$5M (Premium)    |   $2M (Pro)<br>$65M (Premium)    |   $2M (Pro)<br>$65M (Premium)    |             TBD              |
@@ -96,8 +97,8 @@ In general, we recommend starting with the Cost Management connector when gettin
 | Supports multiple scopes                            |                ❌                 |                ✅                 |                ✅                 |              ✅               |
 | Supports scopes in different tenants<sup>5</sup>    |                ❌                 |          ❌<sup>5</sup>           |                ✅                 |         ✅ (via Hubs)         |
 | Faster data load times                              |                ❌                 |                🔜                 |                ✅                 |         ✅ (via Hubs)         |
-| Supports >$65M in cost details                      |                ❌                 |                ❌                 |             🔜 (0.6)              |              ✅               |
-| Analytical engine                                   |                ❌                 |                ❌                 |             🔜 (0.6)              |              ✅               |
+| Supports >$65M in cost details                      |                ❌                 |                ❌                 |                🔜                  |              ✅               |
+| Analytical engine                                   |                ❌                 |                ❌                 |                🔜                  |              ✅               |
 | Accessible outside of Power BI                      |                ❌                 |                ✅                 |                ✅                 |              ✅               |
 | Learn more                                          |  [Learn more][about-connector]   |                                  |     [Learn more][about-hubs]     |                              |
 
