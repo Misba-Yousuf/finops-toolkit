@@ -60,6 +60,9 @@ The FinOps toolkit Power BI reports include pre-configured visuals, but are not 
    5. Select **Outputs**.
    6. Copy the value for `storageUrlForPowerBI`.
 2. If connecting directly to Cost Management exports, set the **Export Storage URL**.
+   <blockquote class="note" markdown="1">
+      _Use exports for datasets not supported in FinOps hubs. When both URLs are configured, reports will prioritize FinOps hubs data and only use exports when no data is available in hubs._
+   </blockquote>
    1. Open the desired storage account in the Azure portal.
    2. Select **Settings** > **Endpoints** in the menu.
    3. Copy the **Data Lake Storage** URL.
@@ -68,7 +71,7 @@ The FinOps toolkit Power BI reports include pre-configured visuals, but are not 
      <blockquote class="warning" markdown="1">
        _[Enable incremental refresh](https://learn.microsoft.com/power-bi/connect-data/incremental-refresh-configure#define-policy) to load more than $5M of raw cost details. Power BI reports can only support $2-5M of data when incremental refresh is not enabled. After incremental refresh is enabled, they can support $2-5M/month for a total of ~$65M in raw cost details._
      </blockquote>
-4. Select the **Close & Apply** to save your settings.
+4. Select **Close & Apply** to save your settings.
 
 If you run into any issues syncing your data, see [Troubleshooting Power BI reports](../../_resources/troubleshooting.md).
 
